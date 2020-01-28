@@ -1,0 +1,56 @@
+.group, .table-esnaqui{
+    font-size: small;
+}
+
+.element {
+    font-size: 50%;
+    padding: 0 5px;
+}
+
+.group {
+    padding-top: 5%;
+}
+
+.blank {
+    height: 20px;
+}
+
+.group-blue{
+    background-color: blue;
+}
+
+.group-orange {
+    background-color: orange;
+}
+
+.group-salmon {
+    background-color: salmon;
+}
+
+.group-green {
+    background-color: springgreen;
+}
+
+div {
+    height: 40px;
+    padding: 0%;
+    margin: 0px;
+}
+
+.atomic-number {
+    height: 20%;
+}
+
+.atomic-mass {
+    height: 20%;
+}
+
+.element-name {
+    align-content: center;
+    height: 50%;
+    font-weight: bolder;
+    font-size: medium;
+}
+.row p{
+    margin: 0 auto;
+}
