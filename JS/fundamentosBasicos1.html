@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- #1 -->
+    <script>
+        function oneTo255() {
+            var x = [];
+            for (let i = 1; i <= 255; i++)
+                x.push(i);
+            return x;
+        }
+        console.log(oneTo255());
+    </script>
+
+    <!-- #2 -->
+    <script>
+        function pares() {
+            var acum = 0;
+            for (let i = 2; i <= 1000; i += 2)
+                acum = i + acum;
+            return acum;
+        }
+        console.log(pares());
+    </script>
+
+    <!-- #3 -->
+
+    <script>
+        function impares() {
+            var acum = 0;
+            for (let i = 1; i <= 1000; i += 2)
+                acum = i + acum;
+            return acum;
+        }
+        console.log(impares());
+    </script>
+
+    <!-- #4 -->
+
+    <script>
+        function sumArray(a) {
+            var acum = 0;
+            for (let i = 0; i < a.length; i++)
+                acum = acum + a[i];
+            return acum;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(sumArray(x));
+    </script>
+
+    <!-- #5 -->
+
+    <script>
+        function findHigher(x) {
+            var high = x[0];
+            for (let i = 1; i < x.length; i++)
+                if (x[i] > high)
+                    high = x[i];
+            return high;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(findHigher(x));
+    </script>
+
+    <!-- #6 -->
+    <script>
+        function avg(x) {
+            var acum = 0;
+            for (let i = 0; i < x.length; i++) {
+                acum = acum + x[i];
+            }
+            return (acum / (x.length))
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(avg(x));
+    </script>
+
+    <!-- #7 -->
+    <script>
+        function oddArray() {
+            var x = [];
+            for (let i = 1; i < 50; i += 2)
+                x.push(i);
+            return x;
+        }
+        console.log(oddArray());
+    </script>
+
+    <!-- #8 -->
+
+    <script>
+        function findHighersThan(x, y) {
+            var cont = 0;
+            for (let i = 0; i < x.length; i++)
+                if (x[i] > y)
+                    cont++;
+            return cont;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(findHighersThan(x, 2));
+    </script>
+
+    <!-- #9 -->
+    <script>
+        function toSquare(x) {
+            for (let i = 0; i < x.length; i++)
+                x[i] = x[i] * x[i];
+            return x;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(toSquare(x));
+    </script>
+
+    <!-- #10 -->
+
+    <script>
+        function negativeToZero(x) {
+            for (let i = 0; i < x.length; i++)
+                if (x[i] < 0)
+                    x[i] = 0;
+            return x;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(negativeToZero(x));
+    </script>
+
+    <!-- #11 -->
+
+    <script>
+        function maxMinAvg(x) {
+            var max = x[0];
+            var min = max;
+            var avg = 0;
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] > max)
+                    max = x[i];
+                if (x[i] < min)
+                    min = x[i];
+                avg = avg + x[i];
+            }
+            return [max, min, (avg / x.length)]
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(maxMinAvg(x));
+    </script>
+
+    <!-- #12 -->
+    <script>
+        function swapLastFirst(x) {
+            var temp = x[0];
+            x[0] = x[x.length - 1];
+            x[x.length - 1] = temp;
+            return x;
+        }
+
+        var x = [1, 3, 12, -10, 16];
+        console.log(swapLastFirst(x));
+    </script>
+
+    <!-- #13 -->
+
+    <script>
+        function negativeToDojo(x) {
+            for (let i = 0; i < x.length; i++)
+                if (x[i] < 0)
+                    x[i] = 'Dojo';
+            return x;
+        }
+        var x = [1, 3, 12, -10, 16];
+        console.log(negativeToDojo(x));
+    </script>
+</body>
+
+</html>
