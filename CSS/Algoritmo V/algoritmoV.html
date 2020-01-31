@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Algoritmo IV</title>
+</head>
+
+<body>
+
+    <!-- #1 -->
+    <script>
+        function resetNegativos(x) {
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] < 0) {
+                    x[i] = 0;
+                }
+            }
+            return x;
+        }
+
+        var a = [1, -7, 2, -8, -2, 3];
+        console.log("Array original: " + a);
+        resetNegativos(a);
+        console.log("Array modificado: " + a + "\n \t\t\t\t ________");
+    </script>
+
+    <!-- #2 -->
+    <script>
+        function moverAdelante(x) {
+            for (let i = 0; i < (x.length - 1); i++)
+                x[i] = x[i + 1];
+            x[x.length - 1] = 0;
+            return x;
+        }
+        var a = [1, 2, 3];
+        console.log("Array original: " + a);
+        moverAdelante(a);
+        console.log("Array modificado: " + a + "\n \t\t\t\t ________");
+    </script>
+
+    <!-- #3 -->
+    <script>
+        function invertir(x) {
+            var aux = [...x];
+            for (let i = 0; i < x.length; i++) {
+                x[i] = aux[x.length - 1 - i];
+            }
+            return x;
+        }
+
+        var a = [1, 2, 3];
+        console.log("Array original: " + a);
+        invertir(a);
+        console.log("Array modificado: " + a + "\n \t\t\t\t ________");
+    </script>
+
+    <!-- #4 -->
+    <script>
+        function repetirValores(x) {
+            var aux = [...x];
+            for (let i = 0; i < aux.length; i++) {
+                x[2 * i] = aux[i];
+                x[(2 * i) + 1] = aux[i];
+            }
+            return x;
+        }
+        var a = [1, 2, 3];
+        console.log("Array original: " + a);
+        repetirValores(a);
+        console.log("Array modificado: " + a + "\n \t\t\t\t ________");
+    </script>
+
+</body>

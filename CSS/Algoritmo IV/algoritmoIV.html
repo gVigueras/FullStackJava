@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Algoritmo IV</title>
+</head>
+
+<body>
+    <!-- 1 -->
+    <script>
+        function listGreaterThan(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] > y)
+                    console.log(x[i]);
+            }
+        }
+        listGreaterThan([2, 7, 9, 1, 8], 3);
+    </script>
+
+    <!-- 2 -->
+    <script>
+        function minMaxAndAverage(x) {
+            var min = x[0],
+                max = x[0],
+                average = 0;
+            for (let i = 0; i < x.length; i++) {
+                average = x[i] + average;
+                if (x[i] > max)
+                    max = x[i];
+                if (x[i] < min)
+                    min = x[i];
+            }
+            average = (average / x.length);
+            console.log('Mínimo: ' + min + ' | Máximo: ' + max + ' | Promedio: ' + average);
+        }
+        minMaxAndAverage([2, 7, 9, 1, 8]);
+    </script>
+
+    <!-- 3 -->
+    <script>
+        function replaceNegatives(x) {
+            for (let i = 0; i < x.length; i++) {
+                if (x[i] < 0)
+                    x[i] = 'Dojo';
+            }
+            console.log(x);
+        }
+        replaceNegatives([2, -7, 9, -1, 8]);
+    </script>
+
+    <!-- 4 -->
+    <script>
+        function removeByIndex(x, a, b) {
+            var y = [];
+            for (let i = 0; i < x.length; i++) {
+                if (i < a || i > b)
+                    y.push(x[i]);
+            }
+            console.log(y);
+            return y;
+        }
+        removeByIndex([2, -7, 9, -1, 8, 90, 111], 2, 4);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <!-- #1 -->
+    <script>
+        function a() {
+            return 35;
+        }
+        console.log(a())
+    </script>
+    <p>Solución 1: 35</p>
+
+    <script>
+        function a() {
+            return 4;
+        }
+        console.log(a() + a());
+    </script>
+    <p>Solución 2: 8</p>
+
+    <script>
+        function a(b) {
+            return b;
+        }
+        console.log(a(2) + a(4));
+    </script>
+    <p>Solución 3: 6</p>
+
+    <script>
+        function a(b) {    
+            console.log(b);
+            return b * 3;
+        }
+        console.log(a(3));
+    </script>
+    <p>Solución 4: 3 y 9</p>
+
+    <script>
+        function a(b) {
+            return b * 4;
+            console.log(b);
+        }
+        console.log(a(10));
+    </script>
+    <p>Solución 5: 40</p>
+
+    <script>
+        function a(b) {
+            if (b < 10) {
+                return 2;
+            }    
+            else {
+                return 4;
+            }
+            console.log(b);
+        }
+        console.log(a(15));
+    </script>
+    <p>Solución 6: 4</p>
+
+    <script>
+        function a(b, c) {
+            return b * c;
+        }
+        console.log(10, 3);
+        console.log(a(3, 10));
+    </script>
+    <p>Solución 7: 10 3, 30</p>
+
+    <script>
+        function a(b) {
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+            return i;
+        }
+        console.log(3);
+        console.log(4);
+    </script>
+    <p>Solución 8: 3 4</p>
+
+    <script>
+        function a() {
+            for (var i = 0; i < 10; i++) {
+                i = i + 2;
+                console.log(i);
+            }
+        }
+        a();
+    </script>
+    <p>Solución 9: 2 5 8 11</p>
+
+    <script>
+        function a(b, c) {
+            for (var i = b; i < c; i++) {
+                console.log(i);
+            }
+            return b * c;
+        }
+        a(0, 10);
+        console.log(a(0, 10));
+    </script>
+    <p>Solución 10: 0 1 2 3 4 5 6 7 8 9, 0 1 2 3 4 5 6 7 8 9 0</p>
+
+    <script>
+        function a() {
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    console.log(j);
+                }
+                console.log(i);
+            }
+        }
+    </script>
+    <p>Solución 11: No hay llamada a la función.</p>
+
+    <script>
+        function a() {
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    console.log(i, j);
+                }
+                console.log(j, i);
+            }
+        }
+    </script>
+    <p>Solución 12: No hay llamada a la función.</p>
+
+    <script>
+        var z = 10;
+
+        function a() {
+            var z = 15;
+            console.log(z);
+        }
+        console.log(z);
+    </script>
+    <p>Solución 13: 10</p>
+
+    <script>
+        var z = 10;
+
+        function a() {
+            var z = 15;
+            console.log(z);
+        }
+        a();
+        console.log(z);
+    </script>
+    <p>Solución 14: 15 10</p>
+
+    <script>
+        var z = 10;
+
+        function a() {
+            var z = 15;
+            console.log(z);
+            return z;
+        }
+        z = a();
+        console.log(z);
+    </script>
+    <p>Solución 15: 15 15</p>
+
+</body>
+
+</html>

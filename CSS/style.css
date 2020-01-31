@@ -1,0 +1,76 @@
+/*CSS reset settings here*/
+
+* {
+    margin: 0%;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+#wrapper {
+    width: 970px;
+    background-color: blue;
+    margin: 0px auto;
+    padding: 1%;
+    border-radius: 0px;
+}
+
+#header {
+    min-height: 100px;
+    background-color: red;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+#footer {
+    min-height: 60px;
+    background-color: grey;
+    padding: 2% 0% 0% 1%;
+}
+
+#navigation {
+    min-height: 200px;
+    width: 180px;
+    background-color: rgb(48, 171, 180);
+    display: inline-block;
+    margin-top: 1%;
+    padding: 2%;
+}
+
+#main_content {
+    min-height: 400px;
+    width: 72%;
+    background-color: rgb(6, 17, 65);
+    display: inline-block;
+    vertical-align: top;
+    margin: 1% 0% 1% 1%;
+    padding: 2%;
+}
+
+.firstL li {
+    margin-left: 20px;
+}
+
+.secondL li {
+    margin-left: 40px;
+}
+
+h1 {
+    color: darkgray;
+    display: block;
+}
+
+span {
+    color: blueviolet;
+}
+
+p {
+    color: aliceblue;
+}
+
+li {
+    color: aliceblue;
+}
+
+a {
+    color: aqua;
+}
