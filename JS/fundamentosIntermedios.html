@@ -107,6 +107,19 @@
         }
         console.log("Ejercicio 7: " + duplicar([1, 'dos', 3, 'cuatro', 5]));
     </script>
+
+    <!-- Fibonacci Recursivo -->
+    <script>
+        function fib(x) {
+            if (x == 0)
+                return 0;
+            if (x < 3)
+                return 1;
+            else
+                return (fib(x - 1) + fib(x - 2));
+        }
+        console.log("Ejercicio Actividad 2: " + fib(10));
+    </script>
 </body>
 
 </html>
