@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+
+<body>
+    <!-- #1 -->
+    <script>
+        function sigma(x) {
+            var acum = 0;
+            for (let i = 1; i <= x; i++) {
+                acum = acum + i
+            }
+            return acum;
+        }
+        console.log("Ejercicio 1: " + sigma(5));
+    </script>
+
+    <!-- #2 -->
+    <script>
+        function factorial(x) {
+            var acum = 1;
+            for (let i = 2; i <= x; i++) {
+                acum = acum * i;
+            }
+            return acum;
+        }
+        console.log("Ejercicio 2: " + factorial(5));
+    </script>
+
+    <!-- #3 -->
+    <script>
+        function fibonacci(x) {
+            if (x == 0)
+                return 0;
+            if (x == 1)
+                return 1;
+            var temp = 0, last = 1, actual = 1;
+            for (let i = 3; i <= x; i++) {
+                temp = last;
+                last = actual;
+                actual = temp + last;
+            }
+            return actual;
+        }
+        console.log("Ejercicio 3: " + fibonacci(10));
+    </script>
+
+    <!-- #4 -->
+    <script>
+        function penultimo(x) {
+            if (x.length < 2)
+                return null;
+            else
+                return x[x.length - 2];
+        }
+        console.log("Ejercicio 4: " + penultimo([1, 5, 2, 5, 5]));
+    </script>
+
+    <!-- #5 -->
+    <script>
+        function eneUltimo(x, y) {
+            if (x.length < y)
+                return null;
+            else
+                return x[x.length - (y + 1)];
+        }
+        console.log("Ejercicio 5: " + eneUltimo([1, 2, 3, 4, 5, 6], 5));
+    </script>
+
+    <!-- #6 -->
+    <script>
+        function subMayor(x) {
+            if (x.length < 2)
+                return null;
+            else {
+                if (x[0] > x[1])
+                    var mayor = x[0], sub = x[1];
+                else
+                    var mayor = x[1], sub = x[0];
+                for (let i = 1; i < x.length; i++) {
+                    if (x[i] > sub) {
+                        if (x[i] > mayor)
+                            mayor = x[i];
+                        else
+                            sub = x[i];
+                    }
+                }
+                return sub;
+            }
+        }
+        console.log("Ejercicio 6: " + subMayor([1, 2, 7, 4, 98, 16, 12]));
+    </script>
+
+    <!-- #7 -->
+    <script>
+        function duplicar(x) {
+            var duplicado = [];
+            for (let i = 0; i < x.length; i++) {
+                for (let j = 0; j < 2; j++)
+                    duplicado.push(x[i]);
+            }
+            return duplicado;
+        }
+        console.log("Ejercicio 7: " + duplicar([1, 'dos', 3, 'cuatro', 5]));
+    </script>
+</body>
+
+</html>
