@@ -5,3 +5,7 @@
 .row {
     margin-top: 30px;
 }
+
+.fixedHeight {
+    height: 100px;
+}
