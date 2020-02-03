@@ -81,10 +81,12 @@
                     var mayor = x[0], sub = x[1];
                 else
                     var mayor = x[1], sub = x[0];
-                for (let i = 1; i < x.length; i++) {
+                for (let i = 2; i < x.length; i++) {
                     if (x[i] > sub) {
-                        if (x[i] > mayor)
+                        if (x[i] > mayor){
+                            sub = mayor;
                             mayor = x[i];
+                        }
                         else
                             sub = x[i];
                     }
@@ -92,7 +94,7 @@
                 return sub;
             }
         }
-        console.log("Ejercicio 6: " + subMayor([1, 2, 7, 4, 98, 16, 12]));
+        console.log("Ejercicio 6: " + subMayor([1, 12, 2, 7, 4, 98, 16]));
     </script>
 
     <!-- #7 -->
