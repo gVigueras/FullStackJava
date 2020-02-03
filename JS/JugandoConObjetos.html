@@ -1,0 +1,25 @@
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        var users = [{ name: "Michael", age: 37 }, { name: "John", age: 30 }, { name: "David", age: 27 }];
+        function returnAge(arr, expectedName) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].name.localeCompare(expectedName) == 0)
+                    return arr[i].age;
+            }
+        }
+        function mostrarTodos(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                console.log("Nombre: " + arr[i].name + ", edad: " + arr[i].age);
+            }
+        }
+        console.log("La edad de Jhon es: " + returnAge(users, "John"));
+        console.log("El nombre del primer sujeto es: " + users[0].name);
+        mostrarTodos(users);
+    </script>
+</body>
+
+</html>
