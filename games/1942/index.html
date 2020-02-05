@@ -48,7 +48,7 @@
 
 		.explosion {
 			background: url('1942.gif');
-			background-position: -30px -20px;
+			background-position: -110px -30px;
 			width: 28px;
 			height: 28px;
 			position: absolute;
@@ -212,12 +212,18 @@
 
 		function explodeUfo(n) {
 			hero.score += 10;
+			explosions.push({ x: ufos[n].x, y: ufos[n].y });
 			ufos.splice(n, 1);
+			var audio = new Audio('explosion.mp3');
+			audio.play();
 		}
 
 		function explodeEnemie(n) {
 			hero.score += 10;
+			explosions.push({ x: enemies[n].x, y: enemies[n].y });
 			enemies.splice(n, 1);
+			var audio = new Audio('explosion.mp3');
+			audio.play();
 		}
 
 		function gameLoop() {
