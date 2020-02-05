@@ -212,6 +212,7 @@
 
 		function explodeUfo(n) {
 			hero.score += 10;
+			explosions = [];
 			explosions.push({ x: ufos[n].x, y: ufos[n].y });
 			ufos.splice(n, 1);
 			var audio = new Audio('explosion.mp3');
@@ -220,6 +221,7 @@
 
 		function explodeEnemie(n) {
 			hero.score += 10;
+			explosions = [];
 			explosions.push({ x: enemies[n].x, y: enemies[n].y });
 			enemies.splice(n, 1);
 			var audio = new Audio('explosion.mp3');
