@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>The Internet</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid col-9 mx-auto px-0">
+        <div class="header">
+            <div class="row bg-light">
+                <nav class="navbar navbar-light justify-content-start">
+                    <a class="navbar-brand mr-0" href="#"><img src="images/globe.png" width="70" height="70" alt=""></a>
+                    <h2 class="">The internet</h2>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="bg-blue col-12">
+                    <h3>The World Wide Web</h3>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="sidebar col-2 bg-light">
+                    <div id="navbar">
+                        <h6>So, what's an <span class="text-danger">Internet?</span></h5>
+                            <p class="side-text">An <span class="text-primary">Inter</span>connected <span
+                                    class="text-primary">Net</span>work of
+                                computers all around the world!</p>
+                            <button type="button" class="px-0 btn btn-block btn-primary">WATCH A VIDEO</button>
+                            <button type="button" class="px-0 btn btn-block btn-warning">MORE RESOURCES</button>
+                            <hr>
+                            <div id="ad">
+                                <h4 class="text-center text-light">Reinvent your career in just 14 weeks</h4>
+                                <img class="mx-0 img-fluid w-75 ml-3" src="images/ninja.png" />
+                                <button type="button" class="ml-2 mb-3 btn btn-sm btn-primary">Learn More >>></button>
+                            </div>
+                    </div>
+                </div>
+                <div class="main-content ml-auto col-9 bg-light">
+                    <div class="row">
+                        <img id="home" src="images/home.png">
+                        <a href="#"><span class="blue">DNS</span></a>
+                        <div id="phone" class="ml-auto row">
+                            <img src="images/phone.png" class="col-2 px-0">
+                            <div class="col-10">
+                                <p class="mini-text my-0">Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
+                                <p class="text-primary my-0">855.967.3787</p>
+                                <p class="mini-text my-0">International +1.617.963.0555</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="blue">Clients and Servers</h3>
+                    <p class="side-text">Computers connected to the <a href="#">Web</a> are called <span
+                            class="bold">clients</span>
+                        and <span class="bold">servers</span></p>
+                    <ul>
+                        <li class="text"><a href="#">Clients</a> are the typical Web user's Internet-connected devices
+                            (for
+                            example, your computer connected to your Wi-Fi, or your phone connected to your mobile
+                            network) and
+                            <a href="#">Web-accessing software</a> available on those devices (usually a web browser
+                            like
+                            Firefox or Chrome).</li>
+                        <li class="text"><a href="#">Servers</a> are computers that store <a href="#">webpages</a>, <a
+                                href="#">sites</a>, or <a href="#">apps</a>. When a client device wants to access a
+                            webpage, a
+                            copy of the webpage is downloaded from the server onto the client machine to be displayed in
+                            the
+                            user's web browser</li>
+                    </ul>
+                    <div class="row d-flex justify-content-center">
+                        <img src="images/client_server.jpg" id="client-server">
+                    </div>
+                    <h3 class="blue">So What Actually Happens?</h3>
+                    <ol>
+                        <li class="text">The browser goes to the <a href="#">DNS server</a> and finds the real address
+                            of the <a href="#">server</a> that the wevsite lives on.</li>
+                        <li class="text">The browser sends an <a href="#">HTTP request</a> message to the server asking
+                            it to
+                            send a copy of the website to the client.</li>
+                        <li class="text">If the server approves the client's request, the server sends the client a <a
+                                href="#">"200 OK" message</a>, which means "Permission granted! Here you go!", adn then
+                            starts
+                            sending the website's files to the browser as a series of small chunks.</li>
+                        <li class="text">The browser assembles the small chunks into a complete website and displays it
+                            to you!
+                        </li>
+                    </ol>
+                    <div id="images">
+                        <img src="images/html.png" id="big3">
+                        <div>
+                            <h3 class="blue">The Big 3 - HTML, CSS, JavaScript</h3>
+                            <p class="text">While the server can process information in many different languages, the
+                                files that
+                                thay serve to the client are always going to be some combination of HTML, CSS, and
+                                JavaScript!
+                            </p>
+                            <p class="text">Learn more about the Big 3 <a href="#">here</a>!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

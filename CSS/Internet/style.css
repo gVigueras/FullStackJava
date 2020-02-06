@@ -1,0 +1,29 @@
+.bg-blue {
+    background-image: linear-gradient(#4a6fb2, #6197a8, #4a6fb2);
+}
+
+p.side-text, li.text, p.text {
+    font-size: small;
+}
+
+p.mini-text {
+    font-size: xx-small;
+}
+
+#ad {
+    background-image: url("images/ad_background.png");
+}
+
+#home {
+    width: 20px;
+    height: 20px;
+}
+
+#phone img {
+    width  : 40px;
+    height: 40px;
+}
+
+#big3, #client-server {
+    height: 100px;
+}
