@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-fluid py-5 col-8 mx-auto">
+        <div class="row py-2">
+            <div class="col-3">
+                <button class="btn btn-lg bg-success mx-auto">AddClass</button>
+            </div>
+            <div class="col-8 ml-auto">
+                <div class="row">
+                    <h1>AddClass</h1>
+                </div>
+                <div class="row">
+                    <p id="first">Click the button to add class 'red' to this paragraph</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row py-2">
+            <div class="col-3">
+                <button class="btn btn-lg bg-primary mx-auto">Slidetoggle</button>
+            </div>
+            <div class="col-8 ml-auto">
+                <div class="row">
+                    <h1>AddClass</h1>
+                </div>
+                <div class="row">
+                    <p>Click the button to slidetoggle a hidden image</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row py-2">
+            <div class="col-2">
+                <button class="btn btn-kg bg-warning mx-auto">Append</button>
+            </div>
+            <div class="col-8 ml-auto" id="appendable">
+                <div class="row">
+                    <h1>AddClass</h1>
+                </div>
+                <div class="row">
+                    <p>Click the button to append a new paragraph</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".bg-success").click(function () {
+                $("#first").addClass('bg-danger')
+            });
+            $(".bg-primary").click(function () {
+                $(".container-fluid").css('background-image', 'url("picardia.jpg")')
+                $(".container-fluid").css('background-position', 'center')
+                $(".container-fluid").css('background-repeat', 'no-repeat')
+                $(".container-fluid").css('background-size', 'contain')
+            });
+            $(".bg-warning").click(function () {
+                $("#appendable").append("<div class='row'><p class='bg-warning'>¡New paragraph!</p></div>");
+            });
+        });
+    </script>
+</body>
+
+</html>
