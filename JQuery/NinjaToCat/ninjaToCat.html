@@ -15,28 +15,40 @@
 
     <div class="container-fluid col-2 mx-auto py-5">
         <div class="row">
-            <img src="img/ninja0.png" data-alt-src="img/cat0.png" class="img-fluid">
+            <img id="img0" src="img/ninja0.png" data-alt-src="img/cat0.png" class="img-fluid">
         </div>
         <div class="row">
-            <img src="img/ninja1.png" data-alt-src="img/cat1.png" class="img-fluid">
+            <img id="img1" src="img/ninja1.png" data-alt-src="img/cat1.png" class="img-fluid">
         </div>
         <div class="row">
-            <img src="img/ninja2.png" data-alt-src="img/cat2.png" class="img-fluid">
+            <img id="img2" src="img/ninja2.png" data-alt-src="img/cat2.png" class="img-fluid">
         </div>
         <div class="row">
-            <img src="img/ninja3.png" data-alt-src="img/cat3.png" class="img-fluid">
+            <img id="img3" src="img/ninja3.png" data-alt-src="img/cat3.png" class="img-fluid">
         </div>
         <div class="row">
-            <img src="img/ninja4.png" data-alt-src="img/cat4.png" class="img-fluid">
+            <img id="img4" src="img/ninja4.png" data-alt-src="img/cat4.png" class="img-fluid">
         </div>
     </div>
 
     <script>
         $(document).ready(function () {
             $('img').click(function () {
-                $(this).attr("src", 'img/cat'+Math.floor(Math.random()*5)+'.png');
+                $(this).attr("src", 'img/' + toggleAttr($(this).attr("src")) + '.png');
             });
+
+            for (let i = 0; i < 5; i++) {
+                if (Math.random() > 0.5)
+                    $('#img' + i).attr("src", 'img/' + toggleAttr($('#img' + i).attr("src")) + '.png');
+            }
         });
+
+        function toggleAttr(src) {
+            if (src.substring(4, 7) == 'nin')
+                return ('cat' + src.substring(9, 10));
+            else
+                return ('ninja' + src.substring(7, 8));
+        }
     </script>
 
 </body>
