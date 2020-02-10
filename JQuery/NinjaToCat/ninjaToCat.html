@@ -34,7 +34,7 @@
     <script>
         $(document).ready(function () {
             $('img').click(function () {
-                $(this).attr("src", $(this).attr('data-alt-src'));
+                $(this).attr("src", 'img/cat'+Math.floor(Math.random()*5)+'.png');
             });
         });
     </script>
