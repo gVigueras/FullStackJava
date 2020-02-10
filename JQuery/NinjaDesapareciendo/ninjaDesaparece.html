@@ -51,10 +51,10 @@
     <script>
         $(document).ready(function () {
             $('img').click(function () {
-                $(this).hide();
+                $(this).fadeOut('slow');
             });
             $('button').click(function () {
-                $('img').show();
+                $('img').fadeIn();
             });
         });
     </script>
