@@ -55,6 +55,7 @@
                 </div>
             </div>
         </div>
+        <img src="picardia.jpg" style="display: none;">
     </div>
     <script>
         $(document).ready(function () {
@@ -62,10 +63,7 @@
                 $("#first").addClass('bg-danger')
             });
             $(".bg-primary").click(function () {
-                $(".container-fluid").css('background-image', 'url("picardia.jpg")')
-                $(".container-fluid").css('background-position', 'center')
-                $(".container-fluid").css('background-repeat', 'no-repeat')
-                $(".container-fluid").css('background-size', 'contain')
+                $('img').slideToggle('slow');
             });
             $(".bg-warning").click(function () {
                 $("#appendable").append("<div class='row'><p class='bg-warning'>¡New paragraph!</p></div>");
