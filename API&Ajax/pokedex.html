@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="my-5">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+            <a class="navbar-brand" href="#"><img src="" id="pokemon_sprite"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="row">
+                    <div class="col-3 text-light mx-auto">
+                        <div class="col-6 text-light"> Nombre:
+                        </div>
+                        <div class="col-6 text-light">
+                            <ul>
+                                <li id="name"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-3 mx-auto">
+                        <div class="col-6 text-light"> Tipos:
+                        </div>
+                        <div class="col-6 text-light">
+                            <ul>
+                                <li id="typeA"></li>
+                                <li id="typeB"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-3 text-light mx-auto">
+                        <div class="col-6 text-light"> Alto:
+                        </div>
+                        <div class="col-6 text-light">
+                            <ul>
+                                <li id="height"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-3 text-light mx-auto">
+                        <div class="col-6 text-light"> Peso:
+                        </div>
+                        <div class="col-6 text-light">
+                            <ul>
+                                <li id="weight"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid my-5 py-5 bg-danger">
+    </div>
+    <script>
+        var output = '';
+        var src = '';
+        $(document).ready(function () {
+            $("header").hide();
+            for (let i = 1; i < 151; i++) {
+                src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i + '.png'
+                output = '<img class="pokemon" id="' + i + '" src="' + src + '">';
+                $('.container-fluid').append(output);
+            }
+        });
+        $(document).on("click", ".pokemon", function () {
+            $("header").show();
+            var id = $(this).attr('id');
+            //Set image
+            $("#pokemon_sprite").attr("src", 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + id + '.png');
+            //Solicitud AJAX
+            var pokemon = {};
+            $.get("http://pokeapi.co/api/v2/pokemon/" + id + "/", function (pokemon) {
+                //Set name
+                $("#name").html(pokemon.name);
+                //Set type A
+                $("#typeA").html(pokemon.types[0].type.name);
+                //Set type B
+                if (pokemon.types.length == 2) {
+                    $("#typeB").html(pokemon.types[1].type.name);
+                    $("#typeB").show();
+                }
+                else
+                    $("#typeB").hide();
+                //Set Height
+                $("#height").html(pokemon.height);
+                //Set Weight
+                $("#weight").html(pokemon.weight);
+
+            }, 'json');
+        });
+    </script>
+</body>
+
+</html>
