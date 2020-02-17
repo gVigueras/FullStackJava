@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Thrones</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark p-3">
+        <h1 class="display-3 text-light text-center border border-secondary my-2 mx-auto py-3">Choose your House</h1>
+
+        <div class="row">
+            <img src="baratheon.png" id="House Baratheon of Storm's End" class="col-4 mx-auto img-fluid">
+            <img src="lannister.jpg" id="House Lannister of Casterly Rock" class="col-4 mx-auto img-fluid">
+        </div>
+        <div class="row mt-3">
+            <img src="stark.jpg" id="House Stark of Winterfell" class="col-4 mx-auto img-fluid">
+            <img src="targaryen.jpg" id="House Targaryen of King's Landing" class="col-4 mx-auto img-fluid">
+        </div>
+
+        <div class="container house-detail bg-light border border-danger mt-3">
+        </div>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".house-detail").hide();
+        });
+        $(document).on("click", "img", function () {
+            var output = '';
+            $(".house-detail").show();
+            var id = $(this).attr('id');
+            //Transform ID
+            id = id.replace(/\s/g, "%20");
+            //Solicitud AJAX
+            $.get("https://www.anapioficeandfire.com/api/houses?name=" + id, function (house) {
+                house = house[0];
+                output += "<h1 class='text-centered'>"+house.name+"</h1>";
+                output += "<ul>";
+                output += "<li> Region: "+house.region+"</li>";
+                output += "<li> Coat of Arms: "+house.coatOfArms+"</li>";
+                output += "<li> Words: "+house.words+"</li>";
+                output += "<li> Titles: "+listArray(house.titles)+"</li>";
+                output += "<li> Seats: "+listArray(house.seats)+"</li>";
+
+                $(".house-detail").html(output);
+            }, 'json');
+        });
+
+        //Listar arreglo
+        function listArray(array) {
+            output = '<ul>';
+            for (let i = 0; i < array.length; i++) {
+                output += '<li>';
+                output += array[i];
+                output += '</li>';
+            }
+            output += '</ul>';
+            return output;
+        }
+    </script>
+</body>
+
+</html>
