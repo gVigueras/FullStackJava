@@ -15,7 +15,11 @@
 
 <body>
     <div class="container-fluid bg-dark p-3">
-        <h1 class="display-3 text-light text-center border border-secondary my-2 mx-auto py-3 col-6">Choose your House</h1>
+        <h1 class="display-3 text-light text-center border border-secondary my-2 mx-auto py-3 col-6">Choose your House
+        </h1>
+
+        <div class="container house-detail bg-light border border-danger my-3">
+        </div>
 
         <div class="row">
             <img src="baratheon.png" id="House Baratheon of Storm's End" class="col-4 mx-auto img-fluid">
@@ -26,9 +30,6 @@
             <img src="targaryen.jpg" id="House Targaryen of King's Landing" class="col-4 mx-auto img-fluid">
         </div>
 
-        <div class="container house-detail bg-light border border-danger mt-3">
-        </div>
-
 
     </div>
     <script>
@@ -37,22 +38,23 @@
         });
         $(document).on("click", "img", function () {
             var output = '';
-            $(".house-detail").show();
             var id = $(this).attr('id');
             //Transform ID
             id = id.replace(/\s/g, "%20");
             //Solicitud AJAX
             $.get("https://www.anapioficeandfire.com/api/houses?name=" + id, function (house) {
                 house = house[0];
-                output += "<h1 class='text-centered'>"+house.name+"</h1>";
+                output += "<h1 class='text-centered'>" + house.name + "</h1>";
                 output += "<ul>";
-                output += "<li> Region: "+house.region+"</li>";
-                output += "<li> Coat of Arms: "+house.coatOfArms+"</li>";
-                output += "<li> Words: "+house.words+"</li>";
-                output += "<li> Titles: "+listArray(house.titles)+"</li>";
-                output += "<li> Seats: "+listArray(house.seats)+"</li>";
+                output += "<li> Region: " + house.region + "</li>";
+                output += "<li> Coat of Arms: " + house.coatOfArms + "</li>";
+                output += "<li> Words: " + house.words + "</li>";
+                output += "<li> Titles: " + listArray(house.titles) + "</li>";
+                output += "<li> Seats: " + listArray(house.seats) + "</li>";
 
                 $(".house-detail").html(output);
+                $(".house-detail").slideDown("slow");
+                $('html,body').animate({ scrollTop: 0 }, 'slow');
             }, 'json');
         });
 
