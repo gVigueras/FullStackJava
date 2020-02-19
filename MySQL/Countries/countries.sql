@@ -102,4 +102,4 @@ SELECT
 FROM
     countries
 GROUP BY region
-ORDER BY COUNT(id);
+ORDER BY COUNT(id) DESC;
