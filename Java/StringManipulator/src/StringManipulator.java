@@ -18,6 +18,6 @@ public class StringManipulator {
 	}
 
 	String concatSubstring(String a, int b, int c, String d) {
-		return d.concat(a.substring(b, c));
+		return a.substring(b, c).concat(d);
 	}
 }
