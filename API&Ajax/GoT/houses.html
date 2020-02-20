@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <style>
+        .row img {
+            height: 300px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of Thrones</title>
@@ -13,32 +18,66 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container-fluid bg-dark p-3">
-        <h1 class="display-3 text-light text-center border border-secondary my-2 mx-auto py-3 col-6">Choose your House
-        </h1>
+<body style="
+    background-color: black;
+    background-image: url('img/background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;">
 
-        <div class="container house-detail bg-light border border-danger my-3">
+    <header class="d-flex justify-content-center">
+        <img class="col-10 my-5" src="https://fontmeme.com/permalink/200220/b6c3a10b2163d6d622e98d4c3b546d17.png"
+            alt="game-of-thrones-font">
+    </header>
+
+    <div class="container-fluid p-3">
+        <div class="container bg-dark text-light border border-danger my-3 px-3">
+            <div class="row">
+                <div class="house-detail col-5"></div>
+                <div class="house-img col-6 ml-auto px-0 py-0"></div>
+            </div>
         </div>
 
-        <div class="row">
-            <img src="baratheon.png" id="House Baratheon of Storm's End" class="col-4 mx-auto img-fluid">
-            <img src="lannister.jpg" id="House Lannister of Casterly Rock" class="col-4 mx-auto img-fluid">
+        <div class="row my-2">
+            <img src="img/baratheon.jpg" id="House Baratheon of Storm's End" class="col-10 col-lg-4 mx-auto img-fluid">
+            <img src="img/lannister.jpg" id="House Lannister of Casterly Rock"
+                class="col-10 col-lg-4 mx-auto img-fluid">
         </div>
-        <div class="row mt-3">
-            <img src="stark.jpg" id="House Stark of Winterfell" class="col-4 mx-auto img-fluid">
-            <img src="targaryen.jpg" id="House Targaryen of King's Landing" class="col-4 mx-auto img-fluid">
+        <div class="row my-2">
+            <img src="img/stark.jpg" id="House Stark of Winterfell" class="col-10 col-lg-4 mx-auto img-fluid">
+            <img src="img/targaryen.jpg" id="House Targaryen of King's Landing"
+                class="col-10 col-lg-4 mx-auto img-fluid">
         </div>
-
+        <div class="row my-2">
+            <img src="img/martell.jpg" id="House Nymeros Martell of Sunspear" class="col-10 col-lg-4 mx-auto img-fluid">
+            <img src="img/greyjoy.jpg" id="House Greyjoy of Pyke" class="col-10 col-lg-4 mx-auto img-fluid">
+        </div>
+        <div class="row my-2">
+            <img src="img/bolton.jpg" id="House Bolton of the Dreadfort" class="col-10 col-lg-4 mx-auto img-fluid">
+            <img src="img/tully.jpg" id="House Tully of Riverrun" class="col-10 col-lg-4 mx-auto img-fluid">
+        </div>
 
     </div>
     <script>
         $(document).ready(function () {
-            $(".house-detail").hide();
+            var audio = new Audio('got-ost.mp3');
+            audio.play();
+            $(".container").hide();
+            $('.row img').hover(
+                function () {
+                    $(this).attr("src", toggleCoatOfArms($(this).attr("src")));
+                },
+                function () {
+                    $(this).attr("src", toggleCoatOfArms($(this).attr("src")));
+
+                })
         });
-        $(document).on("click", "img", function () {
+        $(document).on("click", ".row img", function () {
             var output = '';
             var id = $(this).attr('id');
+            var src = $(this).attr('src');
+            src = src.substring(1, src.length);
             //Transform ID
             id = id.replace(/\s/g, "%20");
             //Solicitud AJAX
@@ -53,7 +92,8 @@
                 output += "<li> Seats: " + listArray(house.seats) + "</li>";
 
                 $(".house-detail").html(output);
-                $(".house-detail").slideDown("slow");
+                $(".container").slideDown("slow");
+                $(".house-img").attr("style", "background-image: url('" + 'img/+' + src.substring(4, src.length) + "');background-size: contain;background-repeat: no-repeat;background-position: center;");
                 $('html,body').animate({ scrollTop: 0 }, 'slow');
             }, 'json');
         });
@@ -68,6 +108,13 @@
             }
             output += '</ul>';
             return output;
+        }
+
+        function toggleCoatOfArms(src) {
+            if (src.substring(4, 5) == '-')
+                return ('img/' + src.substring(5, src.length));
+            else
+                return ('img/-' + src.substring(4, src.length));
         }
     </script>
 </body>
