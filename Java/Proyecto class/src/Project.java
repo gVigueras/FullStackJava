@@ -42,6 +42,12 @@ public class Project {
 		this.name = name;
 		this.description = description;
 	}
+	
+	public Project(String name, String description, double initialCost) {
+		this.name = name;
+		this.description = description;
+		this.initialCost = initialCost;
+	}
 
 	//Métodos
 	public String elevatorPitch() {

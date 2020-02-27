@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Portfolio {
 
 	//Atributo
-	private ArrayList<Project> projects;
+	private ArrayList<Project> projects = new ArrayList<Project>();
 
 	//Getters y Setters
 	public ArrayList<Project> getProjects() {
