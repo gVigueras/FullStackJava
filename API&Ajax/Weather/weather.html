@@ -47,7 +47,7 @@
         $(document).ready(function () {
             $("#weather").hide();
             $('form').submit(function () {
-                var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $("#city").val() + ',us&&appid=540eb6a108a54364913e6b35f757a644';
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $("#city").val() + '&&appid=540eb6a108a54364913e6b35f757a644';
                 console.log(url);
                 $.get(url, function (res) {
                     $("#temp").html((parseInt(res.main.temp) - 273.15 + '').substr(0, 6) + '&#8451');
