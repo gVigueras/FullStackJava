@@ -12,7 +12,7 @@ FROM
         INNER JOIN
     users AS u2 ON f.friend_id = u2.id
 WHERE
-    u.first_name = 'Lermit' 
+    u.first_name = 'Kermit' 
 UNION SELECT 
     u.first_name, u.last_name
 FROM
