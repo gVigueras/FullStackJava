@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8">
+<menu>
+    <lunchMenu>
+        <item category="entradas">
+            <name>Ensalada con Pollo</name>
+            <description>Una ensalada con pollo.</description>
+            <price>$10.99</price>
+        </item>
+        <item category="entradas">
+            <name>Sánduche de Pollo</name>
+            <description>Un sánduche de pollo. </description>
+            <price>$12.99</price>
+        </item>
+        <item category="entradas">
+            <name>Sánduche de Pastrami</name>
+            <description>Un sánduche hecho con pastrami.</description>
+            <price>$13.99</price>
+        </item>
+        <item category="bebidas">
+            <name>Coca-Cola</name>
+            <description>Una gaseosa.</description>
+            <price>$0.99</price>
+        </item>
+        <item category="bebidas">
+            <name>Jugo de Naranja</name>
+            <description>Un jugo hecho con naranjas.</description>
+            <price>$0.99</price>
+        </item>
+    </lunchMenu>
+    <breakfastMenu>
+        <item category="bebidas">
+            <name>Té</name>
+            <description>Té inglés.</description>
+            <price>$1.99</price>
+        </item>
+        <item category="bebidas">
+            <name>Café</name>
+            <description>Café de grano colombiano.</description>
+            <price>$1.99</price>
+        </item>
+        <item category="desayuno">
+            <name>Pan con huevo y palta</name>
+            <description>Tostadas acompañadas de palta fresca y una paila de huevo.</description>
+            <price>$10.99</price>
+        </item>
+    </breakfastMenu>
+    <dinnerMenu>
+        <item category="bebidas">
+            <name>Té</name>
+            <description>Té inglés.</description>
+            <price>$1.99</price>
+        </item>
+        <item category="bebidas">
+            <name>Café</name>
+            <description>Café de grano colombiano.</description>
+            <price>$1.99</price>
+        </item>
+        <item category="cena">
+            <name>Completo italiano</name>
+            <description>Pan chirio recién horneado, acompañado de vienesa casera, palta, tomate y mayonesa.</description>
+            <price>$5.99</price>
+        </item>
+    </dinnerMenu>
+</menu>
