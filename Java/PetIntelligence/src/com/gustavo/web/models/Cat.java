@@ -7,8 +7,8 @@ public class Cat extends Animal implements Pet {
 	}
 
 	@Override
-	public void showAffection() {
-		System.out.println("Meooow!");
+	public String showAffection() {
+		return (this.getName()+" parece mirarte con algo de afecto");
 	}
 
 }

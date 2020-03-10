@@ -7,8 +7,11 @@ public class Dog extends Animal implements Pet {
 	}
 
 	@Override
-	public void showAffection() {
-		System.out.println("Woof woof");
+	public String showAffection() {
+		if(this.getWeight()<30)
+			return (this.getName()+" saltó emocionado a tus brazos!");
+		else
+			return (this.getName()+" se pasea entre tus piernas.");
 	}
 
 }
