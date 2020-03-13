@@ -46,12 +46,17 @@ public class Game extends HttpServlet {
 
 		int number = Integer.valueOf(request.getParameter("number"));
 		User user = (User)session.getAttribute("user");
-		user.setLastTry(number);
-		user.setAttempts(user.getAttempts()+1);
-		session.setAttribute("user", user);
-		request.setAttribute("user", user);
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
-		view.forward(request, response);
+		if(user.getLastTry() == user.getNumber()) {
+			session.removeAttribute("user");
+			doGet(request, response);
+		}else {
+			user.setLastTry(number);
+			user.setAttempts(user.getAttempts()+1);
+			session.setAttribute("user", user);
+			request.setAttribute("user", user);
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+			view.forward(request, response);
+		}
 	}
 
 }

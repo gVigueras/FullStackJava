@@ -5,7 +5,7 @@ import java.util.Random;
 public class User {
 	private int attempts = 0;
 	private int number = Integer.MIN_VALUE;
-	private int lastTry = Integer.MAX_VALUE;
+	private int lastTry = (int)Double.NaN;
 	
 	//-1 si es menor, 1 si es mayor, 0 si acertó.
 	private String flag = "";

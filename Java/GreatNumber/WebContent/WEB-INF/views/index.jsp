@@ -15,27 +15,37 @@
 </head>
 <body>
 	<div class="container p-5 justify-content-center">
-		<form action="/greatnumber/" method="POST">
-			<div class="form-group">
-				<h1>
-					Has intentado
-					<c:out value="${user.getAttempts()}" />
-					veces.
-				</h1>
-			</div>
-			<div class="form-group">
-				<label for="inputNumber">Adivine el número:</label> <input
-					id="inputNumber" name="number" type="number" class="text-center" value='<c:out value="${user.getLastTry()}" />'>
-			</div>
-			<div class="form-group">
-				<label for="flag">¿Cómo te va?:</label> 
-					<input class="text-center bg-light"
-					id="flag" type="text"
-					value='<c:out value="${user.getFlag()}" />'
-					disabled>
-			</div>
-			<button type="submit" class="btn btn-primary">Generar!</button>
-		</form>
+		<div class="col-8 mx-auto">
+			<form action="/greatnumber/" method="POST">
+				<div class="form-group">
+					<h1>
+						Has intentado
+						<c:out value="${user.getAttempts()}" />
+						veces.
+					</h1>
+				</div>
+				<div class="form-group">
+					<label for="inputNumber">Adivine el número:</label> <input
+						id="inputNumber" name="number" type="number" class="text-center"
+						value='<c:out value="${user.getLastTry()}" />'>
+				</div>
+				<div class="form-group">
+					<label for="flag">¿Cómo te va?:</label> <input
+						class="text-center bg-light" id="flag" type="text"
+						value='<c:out value="${user.getFlag()}" />' disabled>
+				</div>
+				<button type="submit" class="btn btn-primary mx-auto">
+					<c:choose>
+						<c:when test="${user.getLastTry()==user.getNumber()}">
+        ¡Jugar de nuevo! 
+    </c:when>
+						<c:otherwise>
+        ¡Adivinar! 
+    </c:otherwise>
+					</c:choose>
+				</button>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
