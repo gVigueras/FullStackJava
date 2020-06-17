@@ -9,7 +9,7 @@ FROM
         INNER JOIN
     countries AS c ON l.country_id = c.id
  WHERE
-    l.language = 'Slovensko'
+    l.language = 'Slovene'
 GROUP BY l.language
 ORDER BY l.percentage DESC;
 

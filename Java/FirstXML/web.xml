@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <!-- Nombre a mostrar del Projecto que contiene los Servlet -->
+    <display-name>SimpleServletProject</display-name>
+    <!-- Etiqueta padre para indicar los datos del servlet -->
+    <servlet>
+        <!-- Nombre del Servlet -->
+        <servlet-name>simpleServlet</servlet-name>
+        <!-- La clase de java que implementa el servlet -->
+        <servlet-class>org.codingdojo.tutorial.SimpleServlet</servlet-class>
+    </servlet>
+
+    <!-- Etiqueta padre para incluir los datos de mapeo del servlet -->
+    <servlet-mapping>
+        <servlet-name>simpleServlet</servlet-name>
+        <!-- URL que referenciará el servlet -->
+        <url-pattern>/simpleServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>xmlServlet</servlet-name>
+        <servlet-class>or.codingdojo.tutorial.XmlServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>xmlServlet</servlet-name>
+        <url-pattern>/xmlServletpath</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <!-- URL de bienvenida -->
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
