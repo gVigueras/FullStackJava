@@ -4,3 +4,4 @@
 *.classpath
 *.jsdtscope
 org.eclipse*
+/.recommenders/
