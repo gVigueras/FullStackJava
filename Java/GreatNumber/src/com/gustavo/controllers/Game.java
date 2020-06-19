@@ -30,7 +30,7 @@ public class Game extends HttpServlet {
 		if(null != session.getAttribute("user") )
 			user = (User)session.getAttribute("user");
 		else
-			user = new User(0);
+			user = new User(0,0,100);
 
 		session.setAttribute("user", user);
 		request.setAttribute("user", user);
@@ -46,7 +46,7 @@ public class Game extends HttpServlet {
 
 		int number = Integer.valueOf(request.getParameter("number"));
 		User user = (User)session.getAttribute("user");
-		if(user.getLastTry() == user.getNumber()) {
+		if(user.getLastTry() == user.getNumber() || user.getAttempts() == 10) {
 			session.removeAttribute("user");
 			doGet(request, response);
 		}else {

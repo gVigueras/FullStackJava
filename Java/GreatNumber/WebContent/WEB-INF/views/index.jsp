@@ -16,7 +16,7 @@
 <body>
 	<div class="container p-5 justify-content-center">
 		<div class="col-8 mx-auto">
-			<form action="/greatnumber/" method="POST">
+			<form action="/GreatNumber/" method="POST">
 				<div class="form-group">
 					<h1>
 						Has intentado
@@ -37,6 +37,9 @@
 				<button type="submit" class="btn btn-primary mx-auto">
 					<c:choose>
 						<c:when test="${user.getLastTry()==user.getNumber()}">
+        ¡Jugar de nuevo! 
+    </c:when>
+						<c:when test="${user.getAttempts()==10}">
         ¡Jugar de nuevo! 
     </c:when>
 						<c:otherwise>

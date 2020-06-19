@@ -1,4 +1,6 @@
-package cl.zoo;
+package cl.zoo.test;
+
+import cl.zoo.animal.Gorilla;
 
 public class ZooTest {
 

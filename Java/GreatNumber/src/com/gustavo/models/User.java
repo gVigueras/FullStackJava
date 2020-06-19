@@ -7,12 +7,12 @@ public class User {
 	private int number = Integer.MIN_VALUE;
 	private int lastTry = (int)Double.NaN;
 	
-	//-1 si es menor, 1 si es mayor, 0 si acertó.
+	//-1 si es menor, 1 si es mayor, 0 si acertó, 2 si se acabaron los intentes.
 	private String flag = "";
 
-	public User(int attempts) {
+	public User(int attempts, int minor, int mayor) {
 		this.attempts = attempts;
-		this.number = this.generateNumber(0, 100);
+		this.number = this.generateNumber(minor, mayor);
 	}
 
 	public int generateNumber(int min, int max) {
@@ -42,7 +42,9 @@ public class User {
 
 	public void setLastTry(int lastTry) {
 		this.lastTry = lastTry;
-		if(lastTry == this.number)
+		if(this.attempts == 9)
+			setFlag("Te quedaste sin intentos!");
+		else if(lastTry == this.number)
 			setFlag("Lo lograste!");
 		else if(lastTry > this.number)
 			setFlag("Muy Alto!");
