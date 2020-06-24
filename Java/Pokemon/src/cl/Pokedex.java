@@ -6,10 +6,15 @@ public class Pokedex extends AbstractPokemon {
 
 	private int myPokemons = Pokemon.getCount();
 	private ArrayList<Pokemon> pokeList = new ArrayList<Pokemon>();
-	
+
 	public void listPokemon() {
+		for (int i = 0; i < pokeList.size(); i++) {
+			if(pokeList.get(i).getHealth()<=0)
+				pokeList.remove(i);
+		}
+		System.out.println("--------------");
 		for (Pokemon pokemon : pokeList) {
-			System.out.println(super.pokemonInfo(pokemon)+"\n--------------\n");
+			System.out.println(super.pokemonInfo(pokemon)+"\n--------------");
 		}
 	}
 

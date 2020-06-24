@@ -5,7 +5,7 @@ public class Pokemon {
 	private String name;
 	private String type;
 	private static int count;
-	
+
 	public Pokemon(String name, int health, String type) {
 		this.health = health;
 		this.name = name;
@@ -15,8 +15,9 @@ public class Pokemon {
 
 	public void attackPokemon(Pokemon pokemon) {
 		pokemon.setHealth(pokemon.getHealth()-10);
-		if(pokemon.getHealth()<=0)
-			System.out.println("Se murió!");
+		if(pokemon.getHealth()<=0) {
+			System.out.println("\n"+pokemon.getName()+" está fuera de combate!\n");
+		}
 	}
 
 	public int getHealth() {

@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Rosters</title>
+<title>SB Admin 2 - Tables</title>
 
 <!-- Custom fonts for this template -->
 <link href="static/css/all.css" rel="stylesheet" type="text/css">
@@ -56,10 +56,13 @@
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
 							<div class="row">
-								<h6 class="m-0 font-weight-bold text-primary">Equipos</h6>
+								<h6 class="m-0 font-weight-bold text-primary">
+									Jugadores de
+									<c:out value="${team.getName()}" />
+								</h6>
 								<button type="button" class="btn btn-success ml-auto"
-									data-toggle="modal" data-target="#newTeam">Agregar
-									nuevo equipo</button>
+									data-toggle="modal" data-target="#newPlayer">Agregar
+									nuevo jugador</button>
 							</div>
 						</div>
 						<div class="card-body">
@@ -67,16 +70,18 @@
 								<table class="table table-bordered" id="dataTable">
 									<thead>
 										<tr>
-											<th>Equipo</th>
-											<th>Jugadores</th>
-											<th>Acción</th>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>Edad</th>
+											<th>Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var='team' items='${teams}'>
+										<c:forEach var='player' items='${team.getPlayers()}'>
 											<tr>
-												<td><c:out value="${team.getName()}" /></td>
-												<td><c:out value="${team.getPlayers().size()}" /></td>
+												<td><c:out value="${player.getFirstName()}" /></td>
+												<td><c:out value="${player.getLastName()}" /></td>
+												<td><c:out value="${player.getAge()}" /></td>
 												<td>
 													<div class="row">
 														<form action="./Team" method="GET" class="mx-1">
@@ -87,8 +92,8 @@
 														<form action="./Team" method="GET">
 															<input type="hidden" name="id"
 																value="<c:out value='${team.getId()}' />"> <input
-																type="hidden" name="delete"	value="true"> <input type="submit"
-																class="btn btn-danger" value="Eliminar">
+																type="hidden" name="delete" value="true"> <input
+																type="submit" class="btn btn-danger" value="Eliminar">
 														</form>
 													</div>
 												</td>
@@ -99,7 +104,8 @@
 							</div>
 						</div>
 					</div>
-
+					<a type="button" class="btn btn-primary" href="./Home">Volver
+						atrás</a>
 				</div>
 				<!-- /.container-fluid -->
 
@@ -118,6 +124,40 @@
 
 		</div>
 		<!-- End of Content Wrapper -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="newPlayer" tabindex="-1" role="dialog"
+			aria-labelledby="newPlayerLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="newTeamLabel">Agregar nuevo
+							equipo</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form action="./Player" method="post">
+						<div class="modal-body">
+							<input type="text" class="form-control" placeholder="Nombre"
+								aria-label="Nombre" name="firstName"> <input type="text"
+								class="form-control" placeholder="Apellido"
+								aria-label="Apellido" name="lastName"> <input
+								type="text" class="form-control" placeholder="Edad"
+								aria-label="Edad" name="age"> <input type="hidden"
+								name="id" value="<c:out value='${team.getId()}' />">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Cancelar</button>
+							<input type="submit" class="btn btn-primary"
+								value="Agregar jugador">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<!-- End of Page Wrapper -->
@@ -143,35 +183,6 @@
 
 	<!-- Page level custom scripts -->
 	<script src="static/js/datatables-demo.js"></script>
-
-	<!-- Modal -->
-	<div class="modal fade" id="newTeam" tabindex="-1" role="dialog"
-		aria-labelledby="newTeamLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="newTeamLabel">Agregar nuevo equipo</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<form action="./Team" method="post">
-					<div class="modal-body">
-						<input type="text" class="form-control"
-							placeholder="Nombre de equipo" aria-label="Nombre de equipo"
-							name="team">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Cancelar</button>
-						<input type="submit" class="btn btn-primary"
-							value="Agregar equipo">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 
 	<!-- End of Modal -->
 </body>
