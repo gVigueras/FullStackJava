@@ -84,14 +84,11 @@
 												<td><c:out value="${player.getAge()}" /></td>
 												<td>
 													<div class="row">
-														<form action="./Team" method="GET" class="mx-1">
-															<input type="hidden" name="id"
-																value="<c:out value='${team.getId()}' />" /> <input
-																type="submit" class="btn btn-warning" value="Editar" />
-														</form>
-														<form action="./Team" method="GET">
+														<form action="./Player" method="post" class="mx-1">
 															<input type="hidden" name="id"
 																value="<c:out value='${team.getId()}' />"> <input
+																type="hidden" name="idPlayer"
+																value="<c:out value='${player.getId()}' />"> <input
 																type="hidden" name="delete" value="true"> <input
 																type="submit" class="btn btn-danger" value="Eliminar">
 														</form>
@@ -125,14 +122,14 @@
 		</div>
 		<!-- End of Content Wrapper -->
 
-		<!-- Modal -->
+		<!-- New Player Modal -->
 		<div class="modal fade" id="newPlayer" tabindex="-1" role="dialog"
 			aria-labelledby="newPlayerLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="newTeamLabel">Agregar nuevo
-							equipo</h5>
+							jugador</h5>
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
@@ -158,6 +155,8 @@
 				</div>
 			</div>
 		</div>
+
+
 
 	</div>
 	<!-- End of Page Wrapper -->

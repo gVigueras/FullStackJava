@@ -22,17 +22,14 @@ public class Player extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/team.jsp");
-		view.forward(request, response);
+		Teamdb team = Roster.getTeams().get(Integer.valueOf((String)request.getParameter("id")));
+		response.sendRedirect("./Team?id="+team.getId());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println((String)request.getParameter("id"));
 		Teamdb team = Roster.getTeams().get(Integer.valueOf((String)request.getParameter("id")));
-
 		if(request.getParameter("idPlayer") == null) {
-
 			String firstName = (String)request.getParameter("firstName");
 			String lastName = (String)request.getParameter("lastName");
 			int age = Integer.valueOf(((String)request.getParameter("age")));
@@ -44,9 +41,11 @@ public class Player extends HttpServlet {
 			team.addPlayer(player);
 
 		}else {
-			if(request.getParameter("delete") == null){
-				com.gustavo.models.Player player = team.getPlayers().get(Integer.valueOf((String)request.getParameter("idPlayer")));
-				
+			com.gustavo.models.Player player = team.getPlayers().get(Integer.valueOf((String)request.getParameter("idPlayer")));
+			if(request.getParameter("delete") == null && request.getParameter("edit") == null){
+				request.setAttribute("editPlayer", player);
+			}else {
+				team.removePlayer(player);
 			}
 		}
 		request.setAttribute("team", team);
