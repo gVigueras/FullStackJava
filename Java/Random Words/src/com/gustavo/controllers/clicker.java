@@ -36,7 +36,7 @@ public class clicker extends HttpServlet {
 		session.setAttribute("date", date);
 		session.setAttribute("clicks", clicks);
 		request.setAttribute("user", user);
-		response.sendRedirect("/randomwords");
+		response.sendRedirect("./");
 	}
 
 	/**
