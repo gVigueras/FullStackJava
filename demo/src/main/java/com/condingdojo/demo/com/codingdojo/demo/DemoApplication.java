@@ -15,8 +15,14 @@ public class DemoApplication {
 
 	// 1. Anotación
 	@RequestMapping("/")
-	// 3. Método que se asigna a la Solicitud anterior.
-	public String hello() { // 3
-		return "Hello World!";
+
+	public String hello() {
+		return "Hola hola!!";
+	}
+	
+	@RequestMapping("/random")
+
+	public String helloRandom() {
+		return "Random request!";
 	}
 }
