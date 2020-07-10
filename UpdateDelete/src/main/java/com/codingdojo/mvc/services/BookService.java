@@ -34,7 +34,12 @@ public class BookService {
 	}
 	//Actualiza el libro dado
 	public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
-		return bookRepository.save(new Book(title, desc, lang, numOfPages));
+		Book book = new Book(title, desc, lang, numOfPages);
+		book.setId(id);
+		return bookRepository.save(book);
+	}
+	public Book updateBook(Book book) {
+		return bookRepository.save(book);
 	}
 	//Eliminando un libro
 	public void deleteBook(Long id) {
