@@ -5,3 +5,6 @@
 *.jsdtscope
 org.eclipse*
 /.recommenders/
+BeltExam*
+FinalExam*
+BeltTest*
